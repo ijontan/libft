@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 14:19:44 by itan              #+#    #+#             */
-/*   Updated: 2022/09/22 14:40:20 by itan             ###   ########.fr       */
+/*   Updated: 2022/09/30 19:36:21 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ void	*ft_mencpy(void *dst, const void *src, size_t n)
 		return (0);
 	i = 0;
 	while (i < n)
-		((unsigned char *)dst)[i] = ((unsigned char *)src)[i++];
+	{
+		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+		i++;
+	}
 	return (dst);
 }
