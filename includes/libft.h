@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 18:46:45 by itan              #+#    #+#             */
-/*   Updated: 2022/09/30 19:24:12 by itan             ###   ########.fr       */
+/*   Updated: 2022/10/03 17:39:24 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+
+char	*ft_strjoin(char const *s1, char const *s2);
 /* ----------------------------------- mem ---------------------------------- */
 void	*ft_bzero(void *a, size_t n);
 void	*ft_mencpy(void *dst, const void *src, size_t n);
@@ -26,7 +28,6 @@ int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_strcpy(char *dst, const char *src);
 char	*ft_strdup(char *str);
 size_t	ft_strlen(char *str);
-char	*ft_strjoin(char *str1, char *str2);
 size_t	ft_strlcat(char *dst, char *src, size_t fsize);
 
 /* ----------------------------------- to ----------------------------------- */

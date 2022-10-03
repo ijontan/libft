@@ -6,7 +6,7 @@
 #    By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/18 20:55:16 by itan              #+#    #+#              #
-#    Updated: 2022/09/30 19:33:29 by itan             ###   ########.fr        #
+#    Updated: 2022/10/03 17:45:09 by itan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	= libft.a
 
 DIR_SRC		= src
 DIR_OBJ		= obj
-SUBDIRS		= to str mem
+SUBDIRS		= to str mem add_ft
 
 SRC_DIR		= $(foreach dir, $(SUBDIRS), $(addprefix $(DIR_SRC)/, $(dir)))
 OBJ_DIR		= $(foreach dir, $(SUBDIRS), $(addprefix $(DIR_OBJ)/, $(dir)))
@@ -26,6 +26,8 @@ INCLUDES	= -I includes
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
 RM		= /bin/rm -f
+
+TEST = ~/Libftest/grademe.sh
 
 $(DIR_OBJ)/%.o :	$(DIR_SRC)/%.c
 			mkdir -p $(DIR_OBJ) $(OBJ_DIR)
@@ -45,5 +47,8 @@ fclean:		clean
 			$(RM) -r $(DIR_OBJ)
 
 re:			fclean all
+
+test: 
+			$(TEST)
 
 .PHONY:		all clean fclean re
