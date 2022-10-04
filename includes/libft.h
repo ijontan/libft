@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 18:46:45 by itan              #+#    #+#             */
-/*   Updated: 2022/10/04 18:25:40 by itan             ###   ########.fr       */
+/*   Updated: 2022/10/04 23:56:11 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 /* ------------------------------- conditions ------------------------------- */
-int		ft_instr(char c, char *str);
+int		ft_instr(char c, char const *str);
 
 /* -------------------------------- converts -------------------------------- */
 int		ft_atoi(char *str);
@@ -44,12 +44,16 @@ void	*ft_calloc(size_t count, size_t size);
 
 /* ----------------------------------- str ---------------------------------- */
 char	*ft_strcat(char *s1, char *s2);
-char	*ft_strchr(const char *str, char c);
+char	*ft_strchr(const char *str, int c);
 int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_strcpy(char *dst, const char *src);
 char	*ft_strdup(char *str);
-size_t	ft_strlen(char *str);
-size_t	ft_strlcat(char *dst, char *src, size_t fsize);
+size_t	ft_strlcat(char *dst, char *src, size_t size);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+size_t	ft_strlen(char const *str);
+int		ft_strncmp(const char *str1, const char *str2, size_t n);
+char	*ft_strnstr(char const *str, char const *substr, size_t len);
+char	*ft_strrchr(const char *str, int c);
 
 /* ----------------------------------- to ----------------------------------- */
 char	ft_toupper(char c);

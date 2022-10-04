@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 13:30:17 by itan              #+#    #+#             */
-/*   Updated: 2022/10/04 23:06:31 by itan             ###   ########.fr       */
+/*   Created: 2022/10/04 23:54:34 by itan              #+#    #+#             */
+/*   Updated: 2022/10/05 00:03:13 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *str, int c)
+#include "libft.h"
+
+char	*ft_strrchr(const char *str, int c)
 {
-	while (*str)
-		if (*(str++) == c)
-			return ((char *)(str - 1));
+	size_t	size;
+	size_t	i;
+
+	i = 0;
+	size = ft_strlen(str);
+	while (++i <= size)
+		if (str[size - i] == c)
+			return ((char *)&str[size - i]);
 	return (0);
 }

@@ -6,11 +6,11 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 16:22:10 by itan              #+#    #+#             */
-/*   Updated: 2022/10/04 16:23:17 by itan             ###   ########.fr       */
+/*   Updated: 2022/10/04 21:48:23 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_instr(char c, char *str)
+int	ft_instr(char c, char const *str)
 {
 	while (*str)
 		if (c == *(str++))

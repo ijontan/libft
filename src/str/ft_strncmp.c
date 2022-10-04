@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 13:30:17 by itan              #+#    #+#             */
-/*   Updated: 2022/10/04 23:06:31 by itan             ###   ########.fr       */
+/*   Created: 2022/10/04 23:08:05 by itan              #+#    #+#             */
+/*   Updated: 2022/10/04 23:13:13 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *str, int c)
+#include "libft.h"
+
+int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	while (*str)
-		if (*(str++) == c)
-			return ((char *)(str - 1));
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		if (*str1 != *str2)
+			return (*str1 - *str2);
+		i++;
+	}
 	return (0);
 }
