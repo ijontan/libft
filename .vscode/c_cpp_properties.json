@@ -1,13 +1,15 @@
 {
   "configurations": [
     {
-      "name": "mac",
-      "includePath": ["${workspaceFolder}/**"],
+      "name": "macos-gcc-x64",
+      "includePath": [
+        "${workspaceFolder}/**"
+      ],
       "defines": [],
       "compilerPath": "/usr/bin/gcc",
       "cStandard": "c17",
       "cppStandard": "c++17",
-      "intelliSenseMode": "clang-x64"
+      "intelliSenseMode": "macos-gcc-x64"
     }
   ],
   "version": 4

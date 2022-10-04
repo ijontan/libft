@@ -6,7 +6,7 @@
 #    By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/18 20:55:16 by itan              #+#    #+#              #
-#    Updated: 2022/10/03 17:45:09 by itan             ###   ########.fr        #
+#    Updated: 2022/10/04 16:46:16 by itan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	= libft.a
 
 DIR_SRC		= src
 DIR_OBJ		= obj
-SUBDIRS		= to str mem add_ft
+SUBDIRS		= to str mem add_ft conditions converts is
 
 SRC_DIR		= $(foreach dir, $(SUBDIRS), $(addprefix $(DIR_SRC)/, $(dir)))
 OBJ_DIR		= $(foreach dir, $(SUBDIRS), $(addprefix $(DIR_OBJ)/, $(dir)))
