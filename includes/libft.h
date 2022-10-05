@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 18:46:45 by itan              #+#    #+#             */
-/*   Updated: 2022/10/04 23:56:11 by itan             ###   ########.fr       */
+/*   Updated: 2022/10/05 15:44:15 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 /* --------------------------------- add_ft --------------------------------- */
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strtrim(char const *s1, char const *set);
 
 /* ------------------------------- conditions ------------------------------- */
 int		ft_instr(char c, char const *str);
@@ -41,6 +42,12 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memset(void *a, int b, size_t n);
 void	*ft_calloc(size_t count, size_t size);
+
+/* ----------------------------------- put ---------------------------------- */
+void	ft_putchar_fd(char c, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putstr_fd(char *s, int fd);
 
 /* ----------------------------------- str ---------------------------------- */
 char	*ft_strcat(char *s1, char *s2);
