@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:30:09 by itan              #+#    #+#             */
-/*   Updated: 2022/10/04 22:30:09 by itan             ###   ########.fr       */
+/*   Updated: 2022/10/05 15:29:13 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	get_trim_size(char const *s1, char const *set)
 		if (!ft_instr(s1[len], set))
 			return (len);
 }
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	size;
