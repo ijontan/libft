@@ -6,7 +6,7 @@
 #    By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/18 20:55:16 by itan              #+#    #+#              #
-#    Updated: 2022/10/05 15:44:35 by itan             ###   ########.fr        #
+#    Updated: 2022/10/06 15:34:19 by itan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME			= libft.a
 
 DIR_SRC_N		= src
 DIR_OBJ_N		= obj
-SUBDIRS			= to str mem add_ft conditions converts is put
+SUBDIRS			= to str mem add_ft conditions converts is put lst
 
 SRC_DIR			= $(foreach dir, $(SUBDIRS), $(addprefix $(DIR_SRC_N)/, $(dir)))
 OBJ_DIR			= $(foreach dir, $(SUBDIRS), $(addprefix $(DIR_OBJ_N)/, $(dir)))
@@ -52,6 +52,6 @@ dir:
 			mkdir -p $(OBJ_DIR)
 
 test: 
-			$(TEST)
+			@$(TEST)
 
 .PHONY:		all clean fclean re test

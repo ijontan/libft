@@ -1,31 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 16:12:18 by itan              #+#    #+#             */
-/*   Updated: 2022/10/05 16:09:57 by itan             ###   ########.fr       */
+/*   Created: 2022/10/05 16:10:45 by itan              #+#    #+#             */
+/*   Updated: 2022/10/05 18:37:05 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+int	get_n_digit(int n)
 {
-	char	*dst;
-	size_t	i;
+	int	i;
 
 	i = 0;
-	dst = (char *)malloc(sizeof(char) * (len + 1));
-	if (!dst)
-		return (0);
-	while (start + i < len)
+	n *= -1;
+	while (n > 0)
 	{
-		dst[i] = s[start + i];
+		n /= 10;
 		i++;
 	}
+	return (i);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*dst;
+	int		i;
+	int		is_neg;
+
+	is_neg = 0;
+	if (n < 0)
+		is_neg = 1;
+	i = get_n_digit(n) + is_neg;
+	n *= -1;
+	dst = (char *)malloc(sizeof(char) * (i + 1));
+	if (!dst)
+		return (0);
 	dst[i] = '\0';
+	while (--i > 0)
+	{
+		dst[i] = n % 10 + '0';
+		n /= 10;
+	}
+	if (is_neg)
+		dst[0] = '-';
 	return (dst);
 }
