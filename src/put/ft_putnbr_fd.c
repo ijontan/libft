@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 15:34:57 by itan              #+#    #+#             */
-/*   Updated: 2022/10/05 15:57:47 by itan             ###   ########.fr       */
+/*   Updated: 2022/10/12 03:24:26 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	else
 	{
-		if (n / 10 > 0)
-			ft_putchar_fd(n / 10, fd);
+		if (n >= 10)
+			ft_putnbr_fd(n / 10, fd);
 		ft_putchar_fd(n % 10 + '0', fd);
 	}
 }

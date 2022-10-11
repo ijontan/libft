@@ -1,0 +1,36 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build lib",
+            "type": "shell",
+            "command": "make",
+        },
+        {
+            "label": "build debug",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-Wall",
+                "-Wextra",
+                "-Werror",
+                "-fdiagnostics-color=auto",
+                "-g3",
+                "${workspaceFolder}/debug/${relativeFileDirname}/${fileBasenameNoExtension}/main.c",
+                "${file}",
+                "-lft",
+                "-L",
+                "${workspaceFolder}",
+                "-o",
+                "${workspaceFolder}/debug/out/${fileBasenameNoExtension}",
+                "-I",
+                "${workspaceFolder}/includes",
+            ],
+            "dependsOn": [
+                "build lib"
+            ]
+        }
+    ]
+}

@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 23:08:05 by itan              #+#    #+#             */
-/*   Updated: 2022/10/04 23:13:13 by itan             ###   ########.fr       */
+/*   Updated: 2022/10/12 03:14:21 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@ int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
 	size_t	i;
 
+	if (!n)
+		return (0);
 	i = 0;
-	while (i < n)
+	while (str1[i] == str2[i] && str1[i])
 	{
-		if (*str1 != *str2)
-			return (*str1 - *str2);
+		if (i >= n - 1)
+			return (0);
 		i++;
 	}
-	return (0);
+	return ((unsigned char)str1[i] - (unsigned char)str2[i]);
 }

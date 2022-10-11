@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 13:30:17 by itan              #+#    #+#             */
-/*   Updated: 2022/10/04 23:06:31 by itan             ###   ########.fr       */
+/*   Updated: 2022/10/12 02:55:46 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,7 @@ char	*ft_strchr(const char *str, int c)
 	while (*str)
 		if (*(str++) == c)
 			return ((char *)(str - 1));
+	if (*(str) == c)
+		return ((char *)(str));
 	return (0);
 }
