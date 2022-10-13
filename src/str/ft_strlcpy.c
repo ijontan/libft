@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 21:51:49 by itan              #+#    #+#             */
-/*   Updated: 2022/10/04 22:02:11 by itan             ###   ########.fr       */
+/*   Updated: 2022/10/12 16:47:45 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	src_size;
 	size_t	i;
 
-	if (!dst || !src)
-		return (0);
 	src_size = ft_strlen(src);
 	i = 0;
 	if (size != 0)

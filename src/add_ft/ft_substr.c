@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:12:18 by itan              #+#    #+#             */
-/*   Updated: 2022/10/12 03:42:48 by itan             ###   ########.fr       */
+/*   Updated: 2022/10/12 16:37:03 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	dst = (char *)malloc(sizeof(char) * (len + 1));
 	if (!dst)
+		return (0);
+	if (start >= ft_strlen(s))
 		return (0);
 	s += start;
 	while (i < len && s[i])

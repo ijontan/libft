@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 21:32:47 by itan              #+#    #+#             */
-/*   Updated: 2022/10/04 22:01:55 by itan             ###   ########.fr       */
+/*   Updated: 2022/10/12 16:53:17 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ size_t	ft_strlcat(char *dst, char *src, size_t size)
 	size_t	i;
 
 	i = ft_strlen(dst);
+	if (size == 0)
+		return (0);
 	if (size < i)
 		return (size + ft_strlen(src));
 	while (*src && i + 1 < size)

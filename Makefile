@@ -6,7 +6,7 @@
 #    By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/18 20:55:16 by itan              #+#    #+#              #
-#    Updated: 2022/10/12 01:45:15 by itan             ###   ########.fr        #
+#    Updated: 2022/10/12 16:29:19 by itan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,6 +53,7 @@ dir:
 
 test: 
 			@$(TEST)
+			@../libft-unit-test/run_test
 
 deep:
 			@less ~/Libftest/deepthought
