@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:54:56 by itan              #+#    #+#             */
-/*   Updated: 2022/10/12 16:05:04 by itan             ###   ########.fr       */
+/*   Updated: 2022/10/14 13:16:11 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ size_t	ft_wordcount(char *src, char c)
 	return (n_word);
 }
 
-char	*new_str(char *src_i, char c)
+char	*new_str(const char *src_i, char c)
 {
 	size_t	i;
 	char	*dst;
@@ -47,23 +47,27 @@ char	*new_str(char *src_i, char c)
 	return (dst);
 }
 
-char	**ft_split(char *src, char c)
+char	**ft_split(const char *src, char c)
 {
 	char	**dst;
+	char	*buffer;
 	size_t	i;
 
 	i = 0;
-	dst = (char **)malloc(sizeof(char *) * (ft_wordcount(src, c) + 1));
+	buffer = (char *)src;
+	if (!buffer)
+		return (0);
+	dst = (char **)malloc(sizeof(char *) * (ft_wordcount(buffer, c) + 1));
 	if (!dst)
 		return (0);
-	while (*src)
+	while (*buffer)
 	{
-		while (*src && *src == c)
-			src++;
-		if (*src)
-			dst[i++] = new_str(src, c);
-		while (*src && *src != c)
-			src++;
+		while (*buffer && *buffer == c)
+			buffer++;
+		if (*buffer)
+			dst[i++] = new_str(buffer, c);
+		while (*buffer && *buffer != c)
+			buffer++;
 	}
 	dst[i] = 0;
 	return (dst);

@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 18:46:45 by itan              #+#    #+#             */
-/*   Updated: 2022/10/06 15:25:53 by itan             ###   ########.fr       */
+/*   Updated: 2022/10/14 13:14:51 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 
 /* --------------------------------- add_ft --------------------------------- */
-char				**ft_split(char *src, char c);
+char				**ft_split(const char *src, char c);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
@@ -27,7 +27,7 @@ char				*ft_strtrim(char const *s1, char const *set);
 int					ft_instr(char c, char const *str);
 
 /* -------------------------------- converts -------------------------------- */
-int					ft_atoi(char *str);
+int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
 
 /* ----------------------------------- is ----------------------------------- */
@@ -77,7 +77,7 @@ char				*ft_strchr(const char *str, int c);
 int					ft_strcmp(const char *s1, const char *s2);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strdup(char *str);
-size_t				ft_strlcat(char *dst, char *src, size_t size);
+size_t				ft_strlcat(char *dst, const char *src, size_t size);
 size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 size_t				ft_strlen(char const *str);
 int					ft_strncmp(const char *str1, const char *str2, size_t n);

@@ -6,13 +6,13 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:30:09 by itan              #+#    #+#             */
-/*   Updated: 2022/10/12 03:37:44 by itan             ###   ########.fr       */
+/*   Updated: 2022/10/14 12:07:14 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	get_trim_size(char const *s1, char const *set)
+int	get_trim_size(const char *s1, const char *set)
 {
 	size_t	len;
 
@@ -22,11 +22,13 @@ int	get_trim_size(char const *s1, char const *set)
 	return (len + 2);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(const char *s1, const char *set)
 {
 	size_t	size;
 	char	*dst;
 
+	if (!s1 || !set)
+		return (0);
 	while (ft_instr(*s1, set))
 		s1++;
 	if (!*s1)

@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 13:10:36 by itan              #+#    #+#             */
-/*   Updated: 2022/10/07 17:17:47 by itan             ###   ########.fr       */
+/*   Updated: 2022/10/13 18:32:57 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;
 
+	if (!s | !f)
+		return ;
 	i = 0;
 	while (s[i])
 	{

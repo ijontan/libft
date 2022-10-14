@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 13:03:01 by itan              #+#    #+#             */
-/*   Updated: 2022/10/12 16:33:04 by itan             ###   ########.fr       */
+/*   Updated: 2022/10/13 18:29:53 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 	size_t	size;
 
+	if (!s || !f)
+		return (0);
 	i = 0;
 	size = ft_strlen(s);
 	dst = (char *)malloc(sizeof(char) * (size + 1));
