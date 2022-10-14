@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 23:54:34 by itan              #+#    #+#             */
-/*   Updated: 2022/10/14 11:17:19 by itan             ###   ########.fr       */
+/*   Updated: 2022/10/14 13:30:20 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strrchr(const char *str, int c)
 	size_t	size;
 	size_t	i;
 
-	if (!str)
-		return (0);
 	i = 0;
 	size = ft_strlen(str);
 	while (i <= size)
