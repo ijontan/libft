@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 18:46:45 by itan              #+#    #+#             */
-/*   Updated: 2022/10/14 13:14:51 by itan             ###   ########.fr       */
+/*   Updated: 2022/10/17 13:48:34 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ char				*ft_strnstr(char const *str, char const *substr,
 char				*ft_strrchr(const char *str, int c);
 
 /* ----------------------------------- to ----------------------------------- */
-char				ft_toupper(char c);
-char				ft_tolower(char c);
+int					ft_toupper(int c);
+int					ft_tolower(int c);
 
 #endif

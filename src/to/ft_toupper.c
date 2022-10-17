@@ -6,13 +6,13 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 18:20:07 by itan              #+#    #+#             */
-/*   Updated: 2022/10/14 11:12:14 by itan             ###   ########.fr       */
+/*   Updated: 2022/10/17 13:47:45 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_toupper(char c)
+int	ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
 		c -= 32;
-	return (c);
+	return ((unsigned char)c);
 }

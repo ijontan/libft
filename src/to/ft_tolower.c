@@ -6,13 +6,13 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 18:23:27 by itan              #+#    #+#             */
-/*   Updated: 2022/10/14 11:11:44 by itan             ###   ########.fr       */
+/*   Updated: 2022/10/17 13:48:54 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_tolower(char c)
+int	ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)
 		c += 32;
-	return (c);
+	return ((unsigned char)c);
 }
