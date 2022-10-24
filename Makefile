@@ -6,7 +6,7 @@
 #    By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/18 20:55:16 by itan              #+#    #+#              #
-#    Updated: 2022/10/13 15:15:52 by itan             ###   ########.fr        #
+#    Updated: 2022/10/20 17:44:39 by itan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,8 +38,7 @@ all:		$(NAME)
 bonus:		$(NAME)
 
 $(NAME):	$(OBJ)
-			@ar -rcs $(NAME) $(OBJ)
-			ranlib $(NAME)
+			ar -rcs $(NAME) $(OBJ)
 
 clean:
 			@$(RM) $(OBJ)

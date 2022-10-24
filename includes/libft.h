@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 18:46:45 by itan              #+#    #+#             */
-/*   Updated: 2022/10/17 13:48:34 by itan             ###   ########.fr       */
+/*   Updated: 2022/10/24 13:56:37 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void				*ft_calloc(size_t count, size_t size);
 
 /* ----------------------------------- put ---------------------------------- */
 void				ft_putchar_fd(char c, int fd);
+void				ft_puthex_fd(unsigned long n, int fd, unsigned char cap);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putstr_fd(char *s, int fd);
