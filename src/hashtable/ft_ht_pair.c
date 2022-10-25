@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_ht_pair.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 16:12:18 by itan              #+#    #+#             */
-/*   Updated: 2022/10/21 16:56:54 by itan             ###   ########.fr       */
+/*   Created: 2022/10/21 16:35:31 by itan              #+#    #+#             */
+/*   Updated: 2022/10/21 16:39:56 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+t_entry	*ft_ht_pair(const char *key, const void *value)
 {
-	char	*dst;
+	t_entry	*entry;
 
-	if (!s)
-		return (0);
-	if (len >= ft_strlen(s + start))
-		len = ft_strlen(s + start);
-	if (start > (unsigned int)ft_strlen(s))
-		len = 0;
-	dst = (char *)malloc(sizeof(char) * (len + 1));
-	if (!dst)
-		return (0);
-	ft_strlcpy(dst, (const char *)(s + start), len + 1);
-	return (dst);
+	entry = ft_calloc(1, sizeof(t_entry));
+	entry->key = ft_calloc(ft_strlen(key) + 1, sizeof(char));
+	entry->value = ft_calloc(ft_strlen((char *)value), 1);
+	entry->next = NULL;
+	return (entry);
 }

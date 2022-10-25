@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_hash.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 16:12:18 by itan              #+#    #+#             */
-/*   Updated: 2022/10/21 16:56:54 by itan             ###   ########.fr       */
+/*   Created: 2022/10/21 16:05:59 by itan              #+#    #+#             */
+/*   Updated: 2022/10/21 16:11:34 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+unsigned int	ft_hash(const char *key)
 {
-	char	*dst;
+	unsigned long	value;
+	size_t			i;
+	size_t			key_len;
 
-	if (!s)
-		return (0);
-	if (len >= ft_strlen(s + start))
-		len = ft_strlen(s + start);
-	if (start > (unsigned int)ft_strlen(s))
-		len = 0;
-	dst = (char *)malloc(sizeof(char) * (len + 1));
-	if (!dst)
-		return (0);
-	ft_strlcpy(dst, (const char *)(s + start), len + 1);
-	return (dst);
+	value = 0;
+	i = 0;
+	key_len = ft_strlen(key);
+	while (i < key_len)
+		value = value * 37 * key[i++];
+	value %= TABLE_SIZE;
+	return (value);
 }

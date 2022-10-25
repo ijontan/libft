@@ -6,12 +6,13 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 18:46:45 by itan              #+#    #+#             */
-/*   Updated: 2022/10/24 13:56:37 by itan             ###   ########.fr       */
+/*   Updated: 2022/10/25 17:04:28 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -29,6 +30,25 @@ int					ft_instr(char c, char const *str);
 /* -------------------------------- converts -------------------------------- */
 int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
+
+/* -------------------------------- hashtable ------------------------------- */
+# define TABLE_SIZE 100000
+
+typedef struct s_entry
+{
+	char			*key;
+	void			*value;
+	struct s_entry	*next;
+}					t_entry;
+
+typedef struct s_ht
+{
+	t_entry			**entries;
+}					t_ht;
+
+unsigned int		ft_hash(const char *key);
+t_ht				*ft_ht_create(void);
+t_entry				*ft_ht_pair(const char *key, const void *value);
 
 /* ----------------------------------- is ----------------------------------- */
 int					ft_isalnum(int c);

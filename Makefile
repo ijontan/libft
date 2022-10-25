@@ -6,7 +6,7 @@
 #    By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/18 20:55:16 by itan              #+#    #+#              #
-#    Updated: 2022/10/20 17:44:39 by itan             ###   ########.fr        #
+#    Updated: 2022/10/25 17:04:03 by itan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME			= libft.a
 
 DIR_SRC_N		= src
 DIR_OBJ_N		= obj
-SUBDIRS			= to str mem add_ft conditions converts is put lst
+SUBDIRS			= to str mem add_ft conditions converts is put lst hashtable
 
 SRC_DIR			= $(foreach dir, $(SUBDIRS), $(addprefix $(DIR_SRC_N)/, $(dir)))
 OBJ_DIR			= $(foreach dir, $(SUBDIRS), $(addprefix $(DIR_OBJ_N)/, $(dir)))

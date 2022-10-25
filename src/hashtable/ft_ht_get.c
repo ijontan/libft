@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_ht_get.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 16:12:18 by itan              #+#    #+#             */
-/*   Updated: 2022/10/21 16:56:54 by itan             ###   ########.fr       */
+/*   Created: 2022/10/21 16:46:42 by itan              #+#    #+#             */
+/*   Updated: 2022/10/21 16:51:36 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	*ft_ht_get(t_ht hashtable, const char *key)
 {
-	char	*dst;
+	size_t	slot;
+	t_entry	*entry;
 
-	if (!s)
-		return (0);
-	if (len >= ft_strlen(s + start))
-		len = ft_strlen(s + start);
-	if (start > (unsigned int)ft_strlen(s))
-		len = 0;
-	dst = (char *)malloc(sizeof(char) * (len + 1));
-	if (!dst)
-		return (0);
-	ft_strlcpy(dst, (const char *)(s + start), len + 1);
-	return (dst);
+	slot = ft_hash(key);
+	entry = hashtable.entries[slot];
+	while (entry)
+	{
+		if (ft_strcmp(entry->key, key))
+			return (entry->value);
+		entry = entry->next;
+	}
+	return (NULL);
 }
