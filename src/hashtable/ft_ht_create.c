@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_ht_create.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 16:12:18 by itan              #+#    #+#             */
-/*   Updated: 2022/10/21 16:56:54 by itan             ###   ########.fr       */
+/*   Created: 2022/10/21 16:21:37 by itan              #+#    #+#             */
+/*   Updated: 2022/10/21 16:28:17 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+t_ht	*ft_ht_create(void)
 {
-	char	*dst;
+	t_ht	*hashtable;
+	size_t	i;
 
-	if (!s)
-		return (0);
-	if (len >= ft_strlen(s + start))
-		len = ft_strlen(s + start);
-	if (start > (unsigned int)ft_strlen(s))
-		len = 0;
-	dst = (char *)malloc(sizeof(char) * (len + 1));
-	if (!dst)
-		return (0);
-	ft_strlcpy(dst, (const char *)(s + start), len + 1);
-	return (dst);
+	hashtable = ft_calloc(1, sizeof(t_ht));
+	hashtable->entries = ft_calloc(TABLE_SIZE, sizeof(t_entry *));
+	i = 0;
+	while (i < TABLE_SIZE)
+		hashtable->entries[i] = NULL;
+	return (hashtable);
 }
