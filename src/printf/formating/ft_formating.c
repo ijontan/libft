@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:33:46 by itan              #+#    #+#             */
-/*   Updated: 2022/11/10 15:43:50 by itan             ###   ########.fr       */
+/*   Updated: 2022/11/10 16:07:04 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	format_conditions(char **s, t_flagdata *data)
 {
-	while (**s && ft_instr(**s, " +#"))
+	while (**s && ft_strchr(" +#", **s))
 	{
 		if (**s == ' ')
 			data->space = 1;
@@ -28,7 +28,7 @@ static void	format_conditions(char **s, t_flagdata *data)
 
 static void	format_paddings(char **s, t_flagdata *data)
 {
-	while ((**s && ft_instr(**s, " .-")) || ft_isdigit(**s))
+	while ((**s && ft_strchr(" .-", **s)) || ft_isdigit(**s))
 	{
 		while (**s == ' ')
 			(*s)++;

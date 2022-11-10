@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:30:09 by itan              #+#    #+#             */
-/*   Updated: 2022/10/14 12:07:14 by itan             ###   ########.fr       */
+/*   Updated: 2022/11/10 16:05:41 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	get_trim_size(const char *s1, const char *set)
 	size_t	len;
 
 	len = ft_strlen((char *)s1) - 1;
-	while (ft_instr(s1[len], set))
+	while (ft_strchr(set, s1[len]))
 		len--;
 	return (len + 2);
 }
@@ -29,7 +29,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 
 	if (!s1 || !set)
 		return (0);
-	while (ft_instr(*s1, set))
+	while (ft_strchr(set, *s1))
 		s1++;
 	if (!*s1)
 		return (ft_strdup(""));
