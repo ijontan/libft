@@ -6,57 +6,64 @@
 #    By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/18 20:55:16 by itan              #+#    #+#              #
-#    Updated: 2022/10/20 17:44:39 by itan             ###   ########.fr        #
+#    Updated: 2022/11/10 15:50:56 by itan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= libft.a
+NAME	= libft.a
 
-DIR_SRC_N		= src
-DIR_OBJ_N		= obj
-SUBDIRS			= to str mem add_ft conditions converts is put lst
+SRC_DIR	= src
+OBJ_DIR	= obj
 
-SRC_DIR			= $(foreach dir, $(SUBDIRS), $(addprefix $(DIR_SRC_N)/, $(dir)))
-OBJ_DIR			= $(foreach dir, $(SUBDIRS), $(addprefix $(DIR_OBJ_N)/, $(dir)))
-SRC				= $(foreach dir, $(SRC_DIR), $(wildcard $(dir)/*.c))
-OBJ				= $(subst $(DIR_SRC_N), $(DIR_OBJ_N), $(SRC:.c=.o))
+# this is for mirroring the out dir
+OBJ_DIRS= $(subst $(SRC_DIR), $(OBJ_DIR), $(shell find src -type d))
 
-INCLUDES		= -I includes
+SRC		= $(shell find $(SRC_DIR) -name '*.c')
+OBJ		= $(subst $(SRC_DIR), $(OBJ_DIR), $(SRC:.c=.o))
 
-CC				= gcc
-CFLAGS			= -Wall -Wextra -Werror
-RM				= rm -f
+CC		= gcc
+CFLAGS	= -Wall -Werror -Wextra
+RM		= rm -f
+INC		= $(addprefix -I , $(shell find includes -type d))
 
-TEST			= ~/Libftest/grademe.sh
+# this is for debugging
+DNAME	= debug.out
+DDIR	= test
+DFLAGS	= -fsanitize=address -fdiagnostics-color=always -g3
+DSRC	= $(shell find $(DDIR) -name '*.c')
+DOBJ	= $(DSRC:.c=.o)
 
-$(DIR_OBJ_N)/%.o :	$(DIR_SRC_N)/%.c
-			@mkdir -p $(OBJ_DIR)
-			$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+$(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c
+				@mkdir -p $(OBJ_DIRS)
+				$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
-all:		$(NAME)
-
-bonus:		$(NAME)
+$(DDIR)/%.o:	$(DDIR)/%.c
+				@mkdir -p $(DDIR)
+				$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 $(NAME):	$(OBJ)
-			ar -rcs $(NAME) $(OBJ)
+			@ar -rcs $(NAME) $(OBJ)
+
+$(DNAME):	$(SRC) $(DSRC)
+			$(CC) $(CFLAGS) $(DFLAGS) $(INC) $(SRC) $(DSRC) -o $(DNAME)
+
+debug:	$(DNAME)
+
+all:	$(NAME)
+
+bonus:	$(NAME)
 
 clean:
-			@$(RM) $(OBJ)
+		@$(RM) $(OBJ) $(DOBJ)
 
-fclean:		clean
-			$(RM) $(NAME)
-			$(RM) -r $(DIR_OBJ_N)
+fclean:	clean
+		$(RM) $(NAME)
+		$(RM) $(DNAME)
+		$(RM) -r $(OBJ_DIR)
 
 re:			fclean all
 
-dir:
-			mkdir -p $(OBJ_DIR)
+.PHONY: all clean fclean re debug bonus
 
-test: 
-			@$(TEST)
-			@../libft-unit-test/run_test
-
-deep:
-			@less ~/Libftest/deepthought
-
-.PHONY:		all clean fclean re test deep bonus
+norm:
+		@norminette $(SRC_DIR) includes/
