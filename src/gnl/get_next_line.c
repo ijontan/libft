@@ -6,11 +6,12 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 15:00:13 by itan              #+#    #+#             */
-/*   Updated: 2022/11/10 16:13:54 by itan             ###   ########.fr       */
+/*   Updated: 2022/11/10 17:28:08 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include "libft.h"
 
 static char	*read_line(int fd, char *cache)
 {

@@ -6,11 +6,12 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 00:57:34 by itan              #+#    #+#             */
-/*   Updated: 2022/11/10 16:15:01 by itan             ###   ########.fr       */
+/*   Updated: 2022/11/10 17:28:21 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include "libft.h"
 
 char	*instr(const char *str, int c)
 {
