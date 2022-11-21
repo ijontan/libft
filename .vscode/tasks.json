@@ -31,6 +31,12 @@
             "dependsOn": [
                 "build lib"
             ]
+        },
+        {
+            "label": "Make debug",
+            "type": "shell",
+            "command": "make debug",
+            "problemMatcher": []
         }
     ]
 }

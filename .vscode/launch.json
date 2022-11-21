@@ -5,10 +5,10 @@
       "name": "test",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/debug/out/${fileBasenameNoExtension}",
+      "program": "${workspaceFolder}/debug.out",
       "args": [],
       "stopAtEntry": false,
-      "cwd": "${fileDirname}",
+      "cwd": "${workspaceFolder}",
       "environment": [],
       "externalConsole": false,
       "MIMode": "gdb",
@@ -24,7 +24,7 @@
           "ignoreFailures": true
         }
       ],
-      "preLaunchTask": "build debug"
+      "preLaunchTask": "Make debug"
     },
     {
       "name": "C/C++ Runner: Debug Session",

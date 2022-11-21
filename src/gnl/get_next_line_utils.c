@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 00:57:34 by itan              #+#    #+#             */
-/*   Updated: 2022/11/10 17:28:21 by itan             ###   ########.fr       */
+/*   Updated: 2022/11/21 18:01:05 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ char	*ft_append(char *s1, char const *s2)
 	while (*s2)
 		dst[i++] = *(s2++);
 	dst[i] = '\0';
-	if (s1 - len1)
-		free(s1 - len1);
+	free(s1 - len1);
 	return (dst);
 }

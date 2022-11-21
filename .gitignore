@@ -1,3 +1,5 @@
 *.o
 *.a
 debug/
+*.out
+test/

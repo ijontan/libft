@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 18:46:45 by itan              #+#    #+#             */
-/*   Updated: 2022/11/10 16:03:58 by itan             ###   ########.fr       */
+/*   Updated: 2022/11/21 18:26:46 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,13 @@ char				*ft_strtrim(char const *s1, char const *set);
 /* -------------------------------- converts -------------------------------- */
 int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
+
+/* ------------------------- fast fourier transform ------------------------- */
+typedef struct s_cplx
+{
+	double			r;
+	double			i;
+}					t_cplx;
 
 /* -------------------------------- hashtable ------------------------------- */
 # ifndef TABLE_SIZE
@@ -74,6 +81,15 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 t_list				*ft_lstnew(void *content);
 int					ft_lstsize(t_list *lst);
+
+/* ---------------------------------- math ---------------------------------- */
+# ifndef PI
+#  define PI 3.14159265359
+# endif
+
+long				ft_factorial(long num);
+double				ft_power(double num, int power);
+double				ft_sin(double rad);
 
 /* ----------------------------------- mem ---------------------------------- */
 void				*ft_bzero(void *a, size_t n);
