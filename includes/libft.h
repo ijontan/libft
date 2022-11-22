@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 18:46:45 by itan              #+#    #+#             */
-/*   Updated: 2022/11/21 18:26:46 by itan             ###   ########.fr       */
+/*   Updated: 2022/11/22 17:34:53 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,8 @@ int					ft_lstsize(t_list *lst);
 long				ft_factorial(long num);
 double				ft_power(double num, int power);
 double				ft_sin(double rad);
+double				ft_cos(double rad);
+double				ft_tan(double rad);
 
 /* ----------------------------------- mem ---------------------------------- */
 void				*ft_bzero(void *a, size_t n);
