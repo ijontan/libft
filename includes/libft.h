@@ -6,13 +6,14 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 18:46:45 by itan              #+#    #+#             */
-/*   Updated: 2022/11/22 17:34:53 by itan             ###   ########.fr       */
+/*   Updated: 2023/02/26 00:35:58 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include "ft_printf.h"
+# include "get_next_line.h"
 # include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
