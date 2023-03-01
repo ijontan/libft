@@ -6,7 +6,7 @@
 #    By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/18 20:55:16 by itan              #+#    #+#              #
-#    Updated: 2023/02/28 20:12:26 by itan             ###   ########.fr        #
+#    Updated: 2023/03/01 19:31:25 by itan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,12 +58,12 @@ UNDERLINE	= \x1B[3m
 
 $(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c
 				@mkdir -p $(OBJ_DIRS)
-				@printf "$(YELLOW)$(BRIGHT)Generating %25s\t$(NORMAL)%040s\r" "$(NAME) src objects..." $@
+				@printf "$(YELLOW)$(BRIGHT)Generating %25s\t$(NORMAL)%.40s\r" "$(NAME) src objects..." $@
 				@$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 $(DDIR)/%.o:	$(DDIR)/%.c
 				@mkdir -p $(DDIR)
-				@printf "$(YELLOW)$(BRIGHT)Generating %25s\t$(NORMAL)%040s\r" "$(NAME) debug objects..." $@
+				@printf "$(YELLOW)$(BRIGHT)Generating %25s\t$(NORMAL)%.40s\r" "$(NAME) debug objects..." $@
 				@$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 $(NAME):	$(OBJ)
