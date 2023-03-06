@@ -1,35 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sin.c                                           :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 17:42:47 by itan              #+#    #+#             */
-/*   Updated: 2023/03/07 02:35:35 by itan             ###   ########.fr       */
+/*   Created: 2023/03/07 02:38:25 by itan              #+#    #+#             */
+/*   Updated: 2023/03/07 02:39:45 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-double	ft_sin(double rad)
+double	ft_abs(double val)
 {
-	int		i;
-	double	dst;
-
-	i = 0;
-	dst = rad;
-	while (++i <= 6)
-	{
-		if (i % 2 == 1)
-			dst -= ft_power(rad, 1 + i * 2) / ft_factorial(1 + i * 2);
-		else
-			dst += ft_power(rad, 1 + i * 2) / ft_factorial(1 + i * 2);
-	}
-	return (dst);
-}
-
-double	ft_asin(double val)
-{
-	return (ft_atan(val * (double)ft_q_in_sqrt(-val * val + 1)));
+	if (val < 0)
+		return (-val);
+	return (val);
 }
