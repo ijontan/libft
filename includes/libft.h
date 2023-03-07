@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 18:46:45 by itan              #+#    #+#             */
-/*   Updated: 2023/03/07 02:40:10 by itan             ###   ########.fr       */
+/*   Updated: 2023/03/07 11:49:10 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,16 +87,24 @@ int					ft_lstsize(t_list *lst);
 # ifndef PI
 #  define PI 3.14159265359
 # endif
+# ifndef PI_4
+#  define PI_4 0.78539816339
+# endif
+# ifndef PI_2
+#  define PI_2 1.57079632679
+# endif
 
 double				ft_abs(double val);
 long				ft_factorial(long num);
 double				ft_power(double num, int power);
+double				ft_copysign(double to, double from);
 double				ft_sin(double rad);
 double				ft_asin(double val);
 double				ft_cos(double rad);
 double				ft_acos(double val);
 double				ft_tan(double rad);
 double				ft_atan(double val);
+double				ft_atan2(double y, double x);
 float				ft_q_in_sqrt(float number);
 float				ft_sqrt(float number);
 

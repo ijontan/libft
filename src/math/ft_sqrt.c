@@ -6,12 +6,13 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 01:32:53 by itan              #+#    #+#             */
-/*   Updated: 2023/03/07 01:47:20 by itan             ###   ########.fr       */
+/*   Updated: 2023/03/07 10:16:34 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // dont ask me how it works,
 // I found this online and I have no idea how it works at all
+// even chatgpt says it's magic
 float	ft_q_in_sqrt(float number)
 {
 	long	i;
