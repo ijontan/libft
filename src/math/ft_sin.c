@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:42:47 by itan              #+#    #+#             */
-/*   Updated: 2023/03/07 18:55:26 by itan             ###   ########.fr       */
+/*   Updated: 2023/03/10 03:41:53 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ double	ft_sin(double rad)
 
 	i = 0;
 	dst = rad;
-	while (++i <= 10)
+	while (++i <= 5)
 	{
 		if (i % 2 == 1)
 			dst -= ft_power(rad, 1 + i * 2) / ft_factorial(1 + i * 2);

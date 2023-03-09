@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:48:13 by itan              #+#    #+#             */
-/*   Updated: 2023/03/07 10:08:20 by itan             ###   ########.fr       */
+/*   Updated: 2023/03/10 03:38:13 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ double	ft_atan(double val)
 {
 	double	val2;
 
+	if (val < 0)
+		return (-ft_atan(-val));
+	if (val > 1)
+		return (PI_2 - ft_atan(1 / val));
 	val2 = val * val;
 	return (((A * val2 + B) * val2 + PI_4 - A - B) * val);
 }
