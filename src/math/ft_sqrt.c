@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 01:32:53 by itan              #+#    #+#             */
-/*   Updated: 2023/03/07 10:16:34 by itan             ###   ########.fr       */
+/*   Updated: 2023/03/18 01:06:55 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ float	ft_q_in_sqrt(float number)
 	threehalfs = 1.5F;
 	x2 = number * 0.5F;
 	y = number;
-	i = *(long *)&y;
+	i = *(long *)&number;
 	i = 0x5f3759df - (i >> 1);
 	y = *(float *)&i;
 	y = y * (threehalfs - (x2 * y * y));
