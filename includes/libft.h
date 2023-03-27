@@ -216,7 +216,7 @@ typedef struct s_q_slerp_var
 
 void				quaternion_slerp(t_quaternion *q1, t_quaternion *q2,
 						double t, t_quaternion *output);
-						
+
 /* ----------------------------------- to ----------------------------------- */
 int					ft_toupper(int c);
 int					ft_tolower(int c);
