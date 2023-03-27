@@ -17,6 +17,7 @@
 # include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdbool.h>
 
 /* --------------------------------- add_ft --------------------------------- */
 char				**ft_split(const char *src, char c);
@@ -140,6 +141,82 @@ char				*ft_strnstr(char const *str, char const *substr,
 						size_t len);
 char				*ft_strrchr(const char *str, int c);
 
+/* ------------------------------- quaternion ------------------------------- */
+
+// credit to https://github.com/MartinWeigel/Quaternion
+typedef struct s_quaternion
+{
+	double			w;
+	double			v[3];
+}					t_quaternion;
+
+# ifndef QUATERNION_EPS
+#  define QUATERNION_EPS (1e-4)
+# endif
+
+void				quaternion_from_axis_angle(double axis[3], double angle,
+						t_quaternion *output);
+double				quaternion_to_axis_angle(t_quaternion *q, double output[3]);
+void				quaternion_x_rotation(double angle, t_quaternion *output);
+void				quaternion_y_rotation(double angle, t_quaternion *output);
+void				quaternion_z_rotation(double angle, t_quaternion *output);
+
+typedef struct s_e_convert_var
+{
+	double			cy;
+	double			sy;
+	double			cr;
+	double			sr;
+	double			cp;
+	double			sp;
+}					t_e_convert_var;
+
+void				quaternion_from_euler3(double euler[3],
+						t_quaternion *output);
+void				quaternion_to_euler3(t_quaternion *q, double output[3]);
+void				quaternion_conjugate(t_quaternion *q, t_quaternion *output);
+
+t_quaternion		quaternion_create(double w, double v0, double v1,
+						double v2);
+t_quaternion		quaternion_create_id(void);
+t_quaternion		quaternion_dup(t_quaternion *q);
+bool				quaternion_equal(t_quaternion *q1, t_quaternion *q2);
+double				quaternion_norm(t_quaternion *q);
+void				quaternion_normalize(t_quaternion *q, t_quaternion *output);
+void				quaternion_multiply(t_quaternion *q1, t_quaternion *q2,
+						t_quaternion *output);
+
+typedef struct s_q_rot_var
+{
+	double			ww;
+	double			xx;
+	double			yy;
+	double			zz;
+	double			wx;
+	double			wy;
+	double			wz;
+	double			xy;
+	double			xz;
+	double			yz;
+}					t_q_rot_var;
+
+void				quaternion_rotate(t_quaternion *q, double v[3],
+						double output[3]);
+
+typedef struct s_q_slerp_var
+{
+	double			cos_half_theta;
+	double			half_theta;
+	double			sin_half_theta;
+	double			ratio_a;
+	double			ratio_b;
+	t_quaternion	*q1;
+	t_quaternion	*q2;
+}					t_q_slerp_var;
+
+void				quaternion_slerp(t_quaternion *q1, t_quaternion *q2,
+						double t, t_quaternion *output);
+						
 /* ----------------------------------- to ----------------------------------- */
 int					ft_toupper(int c);
 int					ft_tolower(int c);
