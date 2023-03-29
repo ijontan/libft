@@ -6,11 +6,11 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 02:38:25 by itan              #+#    #+#             */
-/*   Updated: 2023/03/29 03:49:56 by itan             ###   ########.fr       */
+/*   Updated: 2023/03/29 16:38:08 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "libft.h"
 
 char	*ft_append(char *str1, const char *str2)
 {
