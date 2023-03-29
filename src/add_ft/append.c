@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   append.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 00:57:37 by itan              #+#    #+#             */
-/*   Updated: 2023/03/29 15:28:08 by itan             ###   ########.fr       */
+/*   Created: 2023/03/29 02:38:25 by itan              #+#    #+#             */
+/*   Updated: 2023/03/29 03:49:56 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "minishell.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
+char	*ft_append(char *str1, const char *str2)
+{
+	char	*dst;
 
-# include <stdlib.h>
-# include <unistd.h>
-
-char	*get_next_line(int fd);
-
-#endif
+	if (!str1)
+		return (ft_strdup((char *)str2));
+	if (!str2)
+		return (str1);
+	if (!*str2 && !*str1)
+		return (NULL);
+	dst = ft_strjoin(str1, str2);
+	free(str1);
+	return (dst);
+}

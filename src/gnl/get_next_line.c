@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 15:00:13 by itan              #+#    #+#             */
-/*   Updated: 2022/11/10 17:28:08 by itan             ###   ########.fr       */
+/*   Updated: 2023/03/29 15:28:28 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static char	*read_line(int fd, char *cache)
 	if (!buff)
 		return (NULL);
 	nb = 1;
-	while (!instr(cache, '\n') && nb)
+	while (!ft_strchr(cache, '\n') && nb)
 	{
 		nb = read(fd, buff, BUFFER_SIZE);
 		if (nb <= 0)
