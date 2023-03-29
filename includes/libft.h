@@ -20,6 +20,7 @@
 # include <stdbool.h>
 
 /* --------------------------------- add_ft --------------------------------- */
+char				*ft_append(char *str1, const char *str2);
 char				**ft_split(const char *src, char c);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 char				*ft_strjoin(char const *s1, char const *s2);
