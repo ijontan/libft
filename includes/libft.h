@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 18:46:45 by itan              #+#    #+#             */
-/*   Updated: 2023/03/16 23:48:44 by itan             ###   ########.fr       */
+/*   Updated: 2023/06/22 16:23:45 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 # define LIBFT_H
 # include "ft_printf.h"
 # include "get_next_line.h"
+# include <stdbool.h>
 # include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdbool.h>
 
 /* --------------------------------- add_ft --------------------------------- */
 char				*ft_append(char *str1, const char *str2);
+char				**ft_split_nsep(char *str, char **seps);
 char				**ft_split(const char *src, char c);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 char				*ft_strjoin(char const *s1, char const *s2);
