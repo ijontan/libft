@@ -29,6 +29,20 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strtrim(char const *s1, char const *set);
 
+/* ------------------------------ bazier curve ------------------------------ */
+typedef struct s_bezier_vars
+{
+	double			t2;
+	double			t3;
+	double			mt;
+	double			mt2;
+	double			mt3;
+}					t_bezier_vars;
+
+double				bazier_curves_1d_cubic(double t, double points[4]);
+double				bazier_curves_1d_quadratic(double t, double points[3]);
+double				bazier_curves_1d_linear(double t, double points[2]);
+
 /* -------------------------------- converts -------------------------------- */
 int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
