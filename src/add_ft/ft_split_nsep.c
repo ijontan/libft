@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 16:22:47 by itan              #+#    #+#             */
-/*   Updated: 2023/06/22 16:23:59 by itan             ###   ########.fr       */
+/*   Updated: 2023/06/28 16:37:07 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,15 @@ static char	**recurse(char *str, char **seps, int dept)
 {
 	char	**dst;
 	char	*cache;
-	int		is_quoted;
 	int		i;
 
 	is_quoted = 0;
 	while (*str && ft_strcmpn(str, seps))
 		str += ft_strlen(ft_strcmpn(str, seps));
 	i = 0;
-	while (str[i] && (!ft_strcmpn(str + i, seps) || is_quoted))
-	{
-		if ((str[i] == '"' || str[i] == '\'') && !is_quoted)
-			is_quoted = str[i++];
-		else if (str[i++] == is_quoted)
-			is_quoted = 0;
-	}
-	cache = ft_substr(str, 0, i - !(!is_quoted));
+	while (str[i] && !ft_strcmpn(str + i, seps))
+		i++;
+	cache = ft_substr(str, 0, i);
 	while (str[i] && ft_strcmpn(str + i, seps))
 		i += ft_strlen(ft_strcmpn(str + i, seps));
 	if (!str[i])
