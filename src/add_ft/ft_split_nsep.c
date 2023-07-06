@@ -6,9 +6,11 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 16:22:47 by itan              #+#    #+#             */
-/*   Updated: 2023/06/28 16:37:07 by itan             ###   ########.fr       */
+/*   Updated: 2023/07/06 15:03:01 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static char	*ft_strcmpn(char *str, char **seps)
 {
@@ -30,7 +32,6 @@ static char	**recurse(char *str, char **seps, int dept)
 	char	*cache;
 	int		i;
 
-	is_quoted = 0;
 	while (*str && ft_strcmpn(str, seps))
 		str += ft_strlen(ft_strcmpn(str, seps));
 	i = 0;
