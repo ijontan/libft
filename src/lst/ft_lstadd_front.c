@@ -6,22 +6,22 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 13:25:55 by itan              #+#    #+#             */
-/*   Updated: 2023/03/16 23:39:55 by itan             ###   ########.fr       */
+/*   Updated: 2023/09/29 18:07:34 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new_item)
 {
-	if (!new)
+	if (!new_item)
 		return ;
 	if (!*lst)
 	{
-		*lst = new;
+		*lst = new_item;
 		return ;
 	}
-	new->next = *lst;
-	(*lst)->prev = new;
-	*lst = new;
+	new_item->next = *lst;
+	(*lst)->prev = new_item;
+	*lst = new_item;
 }

@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 18:46:45 by itan              #+#    #+#             */
-/*   Updated: 2023/06/22 16:23:45 by itan             ###   ########.fr       */
+/*   Updated: 2023/09/29 18:07:54 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,8 @@ typedef struct s_list
 	struct s_list	*prev;
 }					t_list;
 
-void				ft_lstadd_back(t_list **lst, t_list *new);
-void				ft_lstadd_front(t_list **lst, t_list *new);
+void				ft_lstadd_back(t_list **lst, t_list *new_item);
+void				ft_lstadd_front(t_list **lst, t_list *new_item);
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
