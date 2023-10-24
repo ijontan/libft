@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 18:46:45 by itan              #+#    #+#             */
-/*   Updated: 2023/10/02 16:33:55 by itan             ###   ########.fr       */
+/*   Updated: 2023/10/24 13:17:30 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,8 @@ t_ht				*ft_ht_create(void);
 t_entry				*ft_ht_pair(const char *key, const void *value);
 void				*ft_ht_get(t_ht hashtable, const char *key);
 t_entry				*ft_ht_pair(const char *key, const void *value);
-void				ft_ht_set(t_ht *hashtable, const char *key, const void *value);
+void				ft_ht_set(t_ht *hashtable, const char *key,
+						const void *value);
 
 /* ----------------------------------- is ----------------------------------- */
 int					ft_isalnum(int c);
