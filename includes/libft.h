@@ -171,7 +171,7 @@ typedef struct s_quaternion
 }					t_quaternion;
 
 # ifndef QUATERNION_EPS
-#  define QUATERNION_EPS (1e-4)
+#  define QUATERNION_EPS 0.0001
 # endif
 
 void				quaternion_from_axis_angle(double axis[3], double angle,
